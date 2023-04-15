@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">graduation</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text"> We\'re so glad you\'re here. Panic attacks can be challenging, but you\'re not alone. Our app is here to support you.</string>
+    <string name="welcome">Welcome to the PanicLess app</string>
+    <string name="text2">Our app provides various strategies, including prediction, detection, and relief techniques</string>
+    <string name="text3">We\'ll guide you through different breathing exercises, visualization techniques!</string>
+    <string name="login">Login</string>
+    <string name="textsign">Please create an account to help us manage your panic attacks</string>
+</resources>
