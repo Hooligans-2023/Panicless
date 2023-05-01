@@ -1,11 +1,61 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">graduation</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="text"> We\'re so glad you\'re here. Panic attacks can be challenging, but you\'re not alone. Our app is here to support you.</string>
+    <string name="hello_blank_fragment">Hello blank fragment1</string>
+    <string name="text"> We\'re so glad you\'re here. Panic attacks can be challenging, but you\'re not alone.</string>
     <string name="welcome">Welcome to the PanicLess app</string>
-    <string name="text2">Our app provides various strategies, including prediction, detection, and relief techniques</string>
+    <string name="text2">Our app provides various strategies, including prediction, detection,  </string>
     <string name="text3">We\'ll guide you through different breathing exercises, visualization techniques!</string>
     <string name="login">Login</string>
     <string name="textsign">Please create an account to help us manage your panic attacks</string>
+    <string name="text1">"Panic disorder is a mental health condition characterized by recurring and unexpected panic attacks. These attacks are intense periods of fear and anxiety that can last from a few minutes to several hours. Panic disorder affects millions of people worldwide and can significantly impair one's ability to function in daily life.
+
+Symptoms of panic disorder may include:
+
+• Sweating.
+• Chest pain or discomfort.
+• Nausea or abdominal distress.
+• Fear of losing control or going crazy.
+• Rapid heartbeat or palpitations.
+• Trembling or shaking.
+• Shortness of breath or feelings of choking.
+• Feeling detached from oneself or reality.
+
+The exact causes of panic disorder are not well understood, but a combination of genetic, environmental, and psychological factors may contribute to its development. People with a family history of anxiety disorders, trauma, or stress may be more likely to develop panic disorder.
+
+Treatment for panic disorder usually involves psychotherapy, which can help individuals learn effective coping strategies and manage their symptoms. Cognitive-behavioral therapy (CBT) is a type of talk therapy that is particularly effective in treating panic disorder. It focuses on identifying and changing negative thought patterns and behaviors that contribute to anxiety and panic attacks. CBT may involve exposure therapy, in which individuals gradually confront situations or triggers that may cause anxiety and learn to manage their responses. Other types of therapy, such as psychodynamic therapy or interpersonal therapy, may also be helpful for some individuals with panic disorder.</string>
+    <string name="dummytext1">Lorem ipsum dolor sit amet consectetur. Urna lacus cursus orci ultrices. Sollicitudin dolor id elit ut tincidunt egestas suscipit orci id. Dui commodo nibh cras nec non libero. Imperdiet est faucibus nunc metus metus tristique tellus leo curabitur. Accumsan nisi nulla arcu lorem quis dolor est aenean nisl. Feugiat neque elit non augue. Adipiscing fermentum enim ut imperdiet. Vitae facilisis porta felis odio. Commodo at nisi phasellus vulputate sollicitudin eget blandit fames. Imperdiet nisl habitant nulla et bibendum arcu pretium imperdiet. Volutpat pellentesque morbi tempor aliquet vel mattis. Bibendum velit fringilla habitant lectus est magnis massa lobortis ullamcorper. Gravida libero ac pellentesque."</string>
+    <string name="title1">Understanding Panic Disorder: Symptoms, Causes, and Treatments</string>
+    <string name="title2">Coping with Panic Attacks: Tips and Strategies</string>
+    <string name="text_artical2">"Panic attacks can be incredibly distressing, but there are many strategies that can help manage and reduce their severity. Some tips for coping with panic attacks include:
+
+• Slow, deep breathing: Taking slow, deep breaths can help reduce feelings of anxiety and slow down the physical symptoms of a panic attack.
+
+• Progressive muscle relaxation: This technique involves tensing and then relaxing different muscle groups in the body, which can help promote relaxation and reduce muscle tension.
+
+• Mindfulness: Practicing mindfulness meditation can help increase awareness of one's thoughts and feelings and promote a sense of calm and relaxation.
+
+• Exercise: Regular physical activity can help reduce symptoms of anxiety and depression and improve overall mental health.
+
+
+• Self-care: Engaging in self-care activities, such as getting enough sleep, eating a balanced diet, and avoiding alcohol and caffeine, can help reduce stress and anxiety levels.
+
+
+It's important to remember that everyone's experience with panic attacks is different, and what works for one person may not work for another. Working with a mental health professional can help you develop a personalized plan for managing panic attacks."</string>
+    <string name="title3">How to Stay Safe from Panic Attacks: Tips for Prevention</string>
+
+    <string name="text_artical3">"While it's not always possible to prevent panic attacks from occurring, there are steps you can take to reduce the likelihood of experiencing them. Some tips for preventing panic attacks include:
+
+• Manage stress: High levels of stress can increase the risk of panic attacks, so finding healthy ways to manage stress is crucial. This can include activities such as meditation, yoga, or deep breathing exercises.
+
+• Get enough sleep: Lack of sleep can increase feelings of anxiety and stress, so it's important to prioritize getting enough restful sleep each night.
+
+• Practice relaxation techniques: Engaging in activities such as meditation, deep breathing exercises, or progressive muscle relaxation can help reduce feelings of anxiety and stress.
+
+• Avoid triggers: Identifying and avoiding triggers, such as certain foods, medications, or situations, can help reduce the risk of panic attacks.
+
+• Seek help: If you're experiencing symptoms of panic disorder, seeking help from a mental health professional can provide you with the tools and resources needed to manage and reduce the frequency and severity of panic attacks.
+
+By taking steps to manage stress, practice relaxation techniques, and seek help when needed, you can reduce your risk of experiencing panic attacks and improve your overall mental health and well-being."</string>
+
 </resources>

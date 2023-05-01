@@ -27,7 +27,7 @@ class Splash : Fragment() {
             } else {
                 findNavController().navigate(R.id.action_splash_to_viewPager2)
             }
-        },3000)
+        },2000)
 
         return binding.root
     }
