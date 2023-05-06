@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@drawable/my_gradient_shape"
-tools:context=".onboarding.Splash">
+tools:context=".presentation.onboarding.Splash">
 
 <ImageView
     android:layout_width="192dp"

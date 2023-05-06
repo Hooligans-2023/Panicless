@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/home">
+    app:startDestination="@id/splash">
 
     <fragment
         android:id="@+id/viewPager2"
-        android:name="com.example.graduation.onboarding.ViewPager"
+        android:name="com.example.graduation.presentation.onboarding.ViewPager"
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager" >
         <action
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/splash"
-        android:name="com.example.graduation.onboarding.Splash"
+        android:name="com.example.graduation.presentation.onboarding.Splash"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/login"
-        android:name="com.example.graduation.Login"
+        android:name="com.example.graduation.presentation.Login"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -46,7 +46,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUp2"
-        android:name="com.example.graduation.SignUp"
+        android:name="com.example.graduation.presentation.SignUp"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -55,17 +55,17 @@
     </fragment>
     <fragment
         android:id="@+id/reading"
-        android:name="com.example.graduation.Reading"
+        android:name="com.example.graduation.presentation.Reading"
         android:label="fragment_reading"
         tools:layout="@layout/fragment_reading" />
     <fragment
         android:id="@+id/artical1"
-        android:name="com.example.graduation.Artical1"
+        android:name="com.example.graduation.presentation.Artical1"
         android:label="fragment_artical3"
         tools:layout="@layout/fragment_artical3" />
     <fragment
         android:id="@+id/home"
-        android:name="com.example.graduation.bottomnavfragment.Home"
+        android:name="com.example.graduation.presentation.bottomnavfragment.Home"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -77,17 +77,17 @@
     </fragment>
     <fragment
         android:id="@+id/relief"
-        android:name="com.example.graduation.bottomnavfragment.Relief"
+        android:name="com.example.graduation.presentation.bottomnavfragment.Relief"
         android:label="fragment_relief"
         tools:layout="@layout/fragment_relief" />
     <fragment
         android:id="@+id/prediction"
-        android:name="com.example.graduation.bottomnavfragment.Prediction"
+        android:name="com.example.graduation.presentation.bottomnavfragment.Prediction"
         android:label="fragment_prediction"
         tools:layout="@layout/fragment_prediction" />
     <fragment
         android:id="@+id/history"
-        android:name="com.example.graduation.bottomnavfragment.History"
+        android:name="com.example.graduation.presentation.bottomnavfragment.History"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
 </navigation>
