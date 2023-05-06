@@ -1,6 +1,60 @@
-// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext {
+        // sorted A-Z
+        compose_version = '1.2.0-rc02'
+        constraint_layout = '1.0.1'
+        coroutines = '1.6.1'
+        coroutine_lifecycle = '2.4.1'
+        dataStoreVersion = '1.0.0'
+        google_map_places_version = '2.7.0'
+        google_map_version = '18.1.0'
+        hilt_version = '2.46'
+        kotlin_version = '1.7.10'
+        lifecycle_version = '2.5.1'
+        lottie_version = '5.2.0'
+        material3 = '1.0.0-alpha14'
+        material_version = '1.7.0'
+        nav_version = "2.5.2"
+        okhttp = '5.0.0-alpha.2'
+        paging_version = "3.1.1"
+        pusher_version = "2.2.1"
+        retrofit = '2.9.0'
+    }
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://developer.huawei.com/repo/' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.2'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21'
+        classpath 'com.google.firebase:perf-plugin:1.4.2'
+        classpath 'com.google.gms:google-services:4.3.15'
+        classpath "com.google.dagger:hilt-android-gradle-plugin:2.44"
+        def nav_version = "2.5.3"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
+
+
+    }
+}
 plugins {
-    id 'com.android.application' version '7.4.2' apply false
-    id 'com.android.library' version '7.4.2' apply false
+    /*id "com.osacky.doctor" version "0.8.1"*/
     id 'org.jetbrains.kotlin.android' version '1.8.0' apply false
+    id 'com.google.dagger.hilt.android' version '2.44' apply false
+
+
+}
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+        maven { url 'https://maven.google.com' }
+        maven {url 'https://developer.huawei.com/repo/'}
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
