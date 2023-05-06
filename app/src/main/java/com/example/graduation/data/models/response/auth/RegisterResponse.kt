@@ -2,13 +2,14 @@ package com.example.graduation.data.models.response.auth
 
 import com.google.gson.annotations.SerializedName
 import com.example.graduation.data.models.common.Info
+import com.example.graduation.data.models.common.UserModel
 
 data class RegisterResponse(
 
-    @SerializedName("request")
-	val registerResponseBody: RegisterResponseBody? = null,
+	@SerializedName("request")
+	val userModel: UserModel? = null,
 
-    @SerializedName("code")
+	@SerializedName("code")
 	val code: Int? = null
 )
 

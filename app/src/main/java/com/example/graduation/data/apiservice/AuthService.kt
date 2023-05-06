@@ -25,12 +25,12 @@ import retrofit2.http.Body
 interface AuthService {
 
 
-    @POST("client/register/send/code")
+    @POST("account/users/")
     suspend fun register(
         @Body registerBody: RegisterBody
-    ): Response<MainResponseModel<RegisterResponse?>>
+    ): Response<MainResponseModel<RegisterResponse>>
 
-    @POST("account/login")
+    @POST("account/login/")
     suspend fun login(
         @Body loginBody: LoginBody
     ): Response<MainResponseModel<LoginResponse>>

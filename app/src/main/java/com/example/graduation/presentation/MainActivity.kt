@@ -8,12 +8,13 @@ import androidx.navigation.NavDestination
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.graduation.R
+import com.example.graduation.base.BaseActivity
 import com.example.graduation.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.HiltAndroidApp
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedListener {
+class MainActivity : BaseActivity(), NavController.OnDestinationChangedListener {
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

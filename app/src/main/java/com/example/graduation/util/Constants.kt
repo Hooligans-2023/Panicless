@@ -7,7 +7,7 @@ typealias ResString = R.string
 
 object Constants {
     //const val OLD_BASE_URL = "https://talab.moltaqadev.com/api/"
-    const val BASE_URL = "https://ammar5werdani.pythonanywhere.com/endpoints/"
+    const val BASE_URL = "https://ammar5werdani.pythonanywhere.com/"
     const val PREFERENCES_DB: String = "PreferencesDb"
     const val NETWORK_PAGE_SIZE = 10
     const val DEBOUNCE_SEARCH = 900L
