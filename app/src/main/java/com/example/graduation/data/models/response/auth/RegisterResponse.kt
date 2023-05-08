@@ -6,12 +6,15 @@ import com.example.graduation.data.models.common.UserModel
 
 data class RegisterResponse(
 
-	@SerializedName("request")
-	val userModel: UserModel? = null,
 
-	@SerializedName("code")
-	val code: Int? = null
-)
+	@field:SerializedName("expiry")
+	val expiry: String? = null,
+
+	@field:SerializedName("user")
+	val user: UserModel? = null,
+
+	@field:SerializedName("token")
+	val token: String? = null)
 
 data class RegisterResponseBody(
 

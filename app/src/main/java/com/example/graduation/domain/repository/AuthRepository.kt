@@ -29,8 +29,8 @@ interface AuthRepository {
     suspend fun forgetPassword( forgetPasswordBody: ForgetPasswordBody): Response<MainResponseModel<ForgetPasswordResponse>>
 
     suspend fun forgetPasswordCheckCode( forgetPasswordCheckCodeBody: ForgetPasswordCheckCodeBody): Response<MainResponseModel<ForgetPasswordRestResponse>>
-    suspend fun register( registerBody: RegisterBody): Response<MainResponseModel<RegisterResponse>>
-    suspend fun login( loginBody: LoginBody): Response<MainResponseModel<LoginResponse>>
+    suspend fun register( registerBody: RegisterBody): Response<RegisterResponse>
+    suspend fun login( loginBody: LoginBody): Response<LoginResponse>
 
 
 

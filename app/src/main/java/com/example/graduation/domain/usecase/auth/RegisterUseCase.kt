@@ -16,7 +16,7 @@ class RegisterUseCase @Inject constructor(
     private val repository: AuthRepository
 ) {
     private val TAG = "com.example.graduation.domain.usecase.auth.RegisterUseCase"
-    operator fun invoke(registerBody: RegisterBody): Flow<Resource<MainResponseModel<RegisterResponse>>> = flow {
+    operator fun invoke(registerBody: RegisterBody): Flow<Resource<RegisterResponse>> = flow {
         try {
             emit(Resource.Loading())
             val registerResponse = repository.register(registerBody)

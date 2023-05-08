@@ -27,7 +27,7 @@ class SignUp : BaseFragment() {
 
     override fun onEvent() {
         binding.run {
-            binding.signUpbtn.setOnClickListener {
+            signUpbtn.setOnClickListener {
                 viewModel.onEvent(AuthEvent.Register(
                     RegisterBody(
                         firstName =firstNum.text.toString(),
@@ -37,6 +37,9 @@ class SignUp : BaseFragment() {
                         trustNumber = lastNum.text.toString()
                     )
                 ))
+            }
+            logIn.setOnClickListener {
+                findNavController().navigate(SignUpDirections.actionSignUp2ToLogin())
             }
         }
     }
@@ -48,7 +51,9 @@ class SignUp : BaseFragment() {
                     hideLoadingDialog()
 //                    sharedViewModel.setRegisterData(state)
 //                    sharedViewModel.setCode(state.result?.code)
-                    findNavController().navigate(SignUpDirections.actionSignUp2ToHome())
+                    findNavController().navigate(SignUpDirections.actionSignUp2ToHome(
+
+                    ))
                     viewModel.clearSuccessState()
                 }
                 if (state.isLoading) {

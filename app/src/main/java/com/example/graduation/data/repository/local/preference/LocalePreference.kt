@@ -3,6 +3,7 @@ package com.example.graduation.data.repository.local.preference
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.edit
+import com.example.graduation.data.repository.local.preference.PreferencesKeys.finishOnboard
 import kotlinx.coroutines.flow.first
 import com.example.graduation.data.repository.local.preference.PreferencesKeys.isLogin
 import com.example.graduation.data.repository.local.preference.PreferencesKeys.latPreferencesKey
@@ -27,6 +28,12 @@ class LocalePreference @Inject constructor(private val dataStore: DataStore<Pref
             preferences[userId] = id
         }
     }
+    suspend fun saveOnboard(isFinished: Boolean) {
+        dataStore.edit { preferences ->
+            preferences[finishOnboard] = isFinished
+        }
+    }
+    suspend fun getOnboardState(): Boolean? = dataStore.data.first()[finishOnboard]
 
     suspend fun getToken(): String? = dataStore.data.first()[userId]
 

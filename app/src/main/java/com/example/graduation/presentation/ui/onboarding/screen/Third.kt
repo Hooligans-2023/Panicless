@@ -6,18 +6,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.example.graduation.R
+import com.example.graduation.data.repository.local.preference.LocalePreference
 import com.example.graduation.databinding.FragmentThirdBinding
 import com.example.graduation.databinding.FragmentViewPagerBinding
-
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
+import javax.inject.Inject
+@AndroidEntryPoint
 class Third : Fragment() {
 
     private val binding by lazy {
         FragmentThirdBinding.inflate(layoutInflater)
     }
 
+    @Inject
+    lateinit var localePreference: LocalePreference
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,10 +46,9 @@ class Third : Fragment() {
     }
 
     private fun onBoardingFinished(){
-        val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        val editor = sharedPref.edit()
-        editor.putBoolean("Finished", true)
-        editor.apply()
+        lifecycleScope.launch {
+            localePreference.saveOnboard(true)
+        }
     }
 
 }
