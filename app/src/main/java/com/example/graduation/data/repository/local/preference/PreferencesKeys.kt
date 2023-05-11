@@ -8,6 +8,7 @@ object PreferencesKeys {
     val userApiToken = stringPreferencesKey("USER_API_TOKEN")
 
     val isLogin = booleanPreferencesKey("is_login")
+    val finishOnboard = booleanPreferencesKey("finish_onboard")
     val latPreferencesKey = stringPreferencesKey("lat")
     val longPreferencesKey = stringPreferencesKey("long")
 

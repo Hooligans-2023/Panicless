@@ -40,10 +40,10 @@ class AuthRepositoryImpl @Inject constructor(
             : Response<MainResponseModel<ForgetPasswordRestResponse>> =
         api.forgetPasswordCheckCode(forgetPasswordCheckCodeBody)
 
-    override suspend fun register(registerBody: RegisterBody): Response<MainResponseModel<RegisterResponse>> =
+    override suspend fun register(registerBody: RegisterBody): Response<RegisterResponse> =
         api.register(registerBody)
 
-    override suspend fun login(loginBody: LoginBody): Response<MainResponseModel<LoginResponse>> =
+    override suspend fun login(loginBody: LoginBody): Response<LoginResponse> =
         api.login(loginBody)
 
 

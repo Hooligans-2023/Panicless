@@ -15,7 +15,7 @@ class LoginUseCase @Inject constructor(
     private val repository: AuthRepository
 ) {
     private val TAG = "LoginUseCase"
-    operator fun invoke(loginBody: LoginBody): Flow<Resource<MainResponseModel<LoginResponse>>> = flow {
+    operator fun invoke(loginBody: LoginBody): Flow<Resource<LoginResponse>> = flow {
         try {
             emit(Resource.Loading())
             val loginResponse = repository.login(loginBody)

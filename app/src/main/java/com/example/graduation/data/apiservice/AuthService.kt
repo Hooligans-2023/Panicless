@@ -28,12 +28,12 @@ interface AuthService {
     @POST("account/users/")
     suspend fun register(
         @Body registerBody: RegisterBody
-    ): Response<MainResponseModel<RegisterResponse>>
+    ): Response<RegisterResponse>
 
     @POST("account/login/")
     suspend fun login(
         @Body loginBody: LoginBody
-    ): Response<MainResponseModel<LoginResponse>>
+    ): Response<LoginResponse>
 
     @POST("client/register/submit")
     suspend fun submitRegister(

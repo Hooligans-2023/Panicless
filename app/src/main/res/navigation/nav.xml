@@ -33,7 +33,9 @@
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_splash_to_home2"
-            app:destination="@id/home" />
+            app:destination="@id/home"
+            app:popUpTo="@id/splash"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/login"
@@ -43,6 +45,11 @@
         <action
             android:id="@+id/action_login_to_signUp2"
             app:destination="@id/signUp2" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/home"
+            app:popUpTo="@id/login"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/signUp2"
@@ -54,7 +61,9 @@
             app:destination="@id/login" />
         <action
             android:id="@+id/action_signUp2_to_home"
-            app:destination="@id/home" />
+            app:destination="@id/home"
+            app:popUpTo="@id/signUp2"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/reading"

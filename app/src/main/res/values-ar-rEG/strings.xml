@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">graduation</string>
+    <string name="text">نحن سعداء جدًا لوجودك هنا. يمكن أن تكون نوبات الهلع صعبة ، لكنك لست وحدك.</string>
+    <string name="welcome">مرحبًا بك في تطبيق PanicLess</string>
+    <string name="text2">يوفر تطبيقنا استراتيجيات مختلفة ، بما في ذلك التنبؤ والكشف</string>
+    <string name="text3">سنرشدك خلال تمارين التنفس المختلفة ، وتقنيات التخيل!</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="textsign">يرجى إنشاء حساب لمساعدتنا في إدارة نوبات الذعر الخاصة بك</string>
+    <string name="text1">اضطراب الهلع هو حالة صحية عقلية تتميز بنوبات هلع متكررة وغير متوقعة. هذه الهجمات هي فترات شديدة من الخوف والقلق يمكن أن تستمر من بضع دقائق إلى عدة ساعات. يؤثر اضطراب الهلع على ملايين الأشخاص في جميع أنحاء العالم ويمكن أن يضعف بشكل كبير قدرة الفرد على العمل في الحياة اليومية.</string>
     <string name="loading">تحميل</string>
+    <string name="health_status">الحالة الصحية</string>
+    <string name="readings">قراءة</string>
+    <string name="do_you_feel_ok">هل تشعر بالموافقة؟</string>
+    <string name="start_taking_readings">ابدأ بأخذ القراءات</string>
+    <string name="articles">مقالات</string>
 </resources>

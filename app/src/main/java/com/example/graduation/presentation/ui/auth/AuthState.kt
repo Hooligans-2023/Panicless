@@ -1,12 +1,14 @@
 package com.example.graduation.presentation.ui.auth
 
 import android.net.Uri
+import com.example.graduation.data.models.response.auth.LoginResponse
 import com.example.graduation.data.models.response.auth.RegisterResponse
 
 data class AuthState(
     val isLoading: Boolean = false,
     val isSuccess: Boolean = false,
     val registerResponse: RegisterResponse? = null,
+    val loginResponse: LoginResponse? = null,
     val error: String = "",
     val name: String = "",
     val nameError: Int? = null,
