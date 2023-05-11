@@ -19,6 +19,12 @@ data class UserModel(
 	@field:SerializedName("id")
 	val id: Int? = null,
 
+	@field:SerializedName("is_admin")
+	val isAdmin: Boolean? = null,
+
+	@field:SerializedName("is_active")
+	val isActive: Boolean? = null,
+
 	@field:SerializedName("email")
 	val email: String? = null
 )

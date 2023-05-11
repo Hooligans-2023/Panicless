@@ -5,11 +5,14 @@ import com.example.graduation.data.models.common.UserModel
 
 data class LoginResponse(
 
-	@field:SerializedName("access_token")
-	val accessToken: String? = null,
+	@field:SerializedName("expiry")
+	val expiry: String? = null,
 
 	@field:SerializedName("user")
-	val user: UserModel? = null
+	val user: UserModel? = null,
+
+	@field:SerializedName("token")
+	val token: String? = null
 )
 
 

@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavDirections
 import com.example.graduation.data.repository.local.preference.LocalePreference
+import com.example.graduation.domain.usecase.auth.LoginUseCase
 import com.example.graduation.util.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -18,6 +19,7 @@ import javax.inject.Inject
 @HiltViewModel
 class AuthViewModel @Inject constructor(
     private val registerUseCase: RegisterUseCase,
+    private val loginUseCase: LoginUseCase,
     private val localePreference: LocalePreference,
 ) : ViewModel() {
     private val TAG = "RegisterViewModel"
@@ -39,8 +41,31 @@ class AuthViewModel @Inject constructor(
                 registerUseCase(event.registerBody).onEach { result ->
                     _uiState.value = when (result) {
                         is Resource.Success -> {
-                            _effect.send(UiEffect.ShowToast(result.data?.message ?: ""))
-                            _uiState.value.copy(isSuccess = result.data != null, registerResponse = result.data?.data, isLoading = false)
+                            _effect.send(UiEffect.ShowToast(result.message ?: ""))
+                            result.data?.token?.let { saveToken(it) }
+                            localePreference.setLoginState(true)
+                            _uiState.value.copy(isSuccess = result.data != null, registerResponse = result.data, isLoading = false)
+                        }
+                        is Resource.Error -> {
+                            val message = result.message ?: "An unexpected error occurred"
+                            Log.e(TAG, "register: error message $message")
+                            _effect.send(UiEffect.ShowToast(message))
+                            _uiState.value.copy(error = message, isLoading = false, isSuccess = false)
+                        }
+                        is Resource.Loading -> {
+                            _uiState.value.copy(isLoading = true, error = "", isSuccess = false)
+                        }
+                    }
+                }.launchIn(viewModelScope)
+            }
+            is AuthEvent.Login -> {
+                loginUseCase(event.loginBody).onEach { result ->
+                    _uiState.value = when (result) {
+                        is Resource.Success -> {
+                            _effect.send(UiEffect.ShowToast(result.message ?: ""))
+                            result.data?.token?.let { saveToken(it) }
+                            localePreference.setLoginState(true)
+                            _uiState.value.copy(isSuccess = result.data != null, loginResponse = result.data, isLoading = false)
                         }
                         is Resource.Error -> {
                             val message = result.message ?: "An unexpected error occurred"
