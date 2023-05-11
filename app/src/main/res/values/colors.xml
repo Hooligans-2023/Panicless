@@ -7,12 +7,16 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="txtDark">#121935</color>
+    <color name="text_dark">#121935</color>
     <color name="txtRed">#ED4242</color>
     <color name="superDarkGray">#3D3D3D</color>
     <color name="primary">#6499E5</color>
     <color name="solidColor">#EDEFFF</color>
     <color name="darkGray">#818181</color>
+    <color name="txtDark">#818181</color>
+    <color name="color_card">#f6f7fd</color>
+    <color name="head_bar">#1C1B1F</color>
+    <color name="card_background">#f6f7fd</color>
 
 
 </resources>

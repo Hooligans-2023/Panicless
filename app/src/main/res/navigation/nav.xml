@@ -60,12 +60,20 @@
         android:id="@+id/reading"
         android:name="com.example.graduation.presentation.ui.Reading"
         android:label="fragment_reading"
-        tools:layout="@layout/fragment_reading" />
+        tools:layout="@layout/fragment_reading" >
+        <action
+            android:id="@+id/action_reading_to_home"
+            app:destination="@id/home" />
+    </fragment>
     <fragment
         android:id="@+id/artical1"
         android:name="com.example.graduation.presentation.ui.Artical1"
         android:label="fragment_artical3"
-        tools:layout="@layout/fragment_artical3" />
+        tools:layout="@layout/fragment_artical3" >
+        <action
+            android:id="@+id/action_artical1_to_home"
+            app:destination="@id/home" />
+    </fragment>
     <fragment
         android:id="@+id/home"
         android:name="com.example.graduation.presentation.ui.bottomnavfragment.Home"
@@ -73,16 +81,31 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_home2_to_artical1"
-            app:destination="@id/artical1" />
+            app:destination="@id/artical1"
+            app:popUpTo="@id/home"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_home2_to_reading"
             app:destination="@id/reading" />
+        <action
+            android:id="@+id/action_home_to_artical3"
+            app:destination="@id/artical3" />
+        <action
+            android:id="@+id/action_home_to_artical2"
+            app:destination="@id/artical2" />
     </fragment>
     <fragment
         android:id="@+id/relief"
         android:name="com.example.graduation.presentation.ui.bottomnavfragment.Relief"
         android:label="fragment_relief"
-        tools:layout="@layout/fragment_relief" />
+        tools:layout="@layout/fragment_relief" >
+        <action
+            android:id="@+id/action_relief_to_deepRelease"
+            app:destination="@id/deepRelease" />
+        <action
+            android:id="@+id/action_relief_to_nature"
+            app:destination="@id/nature" />
+    </fragment>
     <fragment
         android:id="@+id/prediction"
         android:name="com.example.graduation.presentation.ui.bottomnavfragment.Prediction"
@@ -93,4 +116,34 @@
         android:name="com.example.graduation.presentation.ui.bottomnavfragment.History"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
+    <fragment
+        android:id="@+id/artical3"
+        android:name="com.example.graduation.Artical.Article3"
+        android:label="artical3" >
+        <action
+            android:id="@+id/action_artical3_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/artical2"
+        android:name="com.example.graduation.presentation.ui.artical2"
+        android:label="artical2" >
+        <action
+            android:id="@+id/action_artical2_to_home"
+            app:destination="@id/home" />
+    </fragment>
+    <fragment
+        android:id="@+id/deepRelease"
+        android:name="com.example.graduation.Relief.DeepRelease"
+        android:label="fragment_deep_release"
+        tools:layout="@layout/fragment_deep_release" >
+        <action
+            android:id="@+id/action_deepRelease_to_relief"
+            app:destination="@id/relief" />
+    </fragment>
+    <fragment
+        android:id="@+id/nature"
+        android:name="com.example.graduation.Relief.nature.Nature"
+        android:label="fragment_nature"
+        tools:layout="@layout/fragment_nature" />
 </navigation>

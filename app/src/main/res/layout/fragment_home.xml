@@ -28,7 +28,7 @@
         android:layout_marginEnd="327dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Health Status"
-        android:textColor="@color/txtDark"
+        android:textColor="@color/text_dark"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcome" />
@@ -97,7 +97,7 @@
         android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto_medium"
         android:text="Readings"
-        android:textColor="@color/txtDark"
+        android:textColor="@color/text_dark"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
@@ -159,15 +159,15 @@
                 android:layout_marginBottom="4dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="78"
-                android:textColor="@color/txtDark"
+                android:textColor="@color/text_dark"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/textView6"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_name_heart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
             <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/text_view_name_heart"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -196,7 +196,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView4">
 
             <ImageView
-                android:id="@+id/imageViewbreath"
+                android:id="@+id/image_view_breath"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
@@ -215,13 +215,13 @@
                 android:text="96.6"
                 android:textColor="#121935"
                 android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/textViewbrathing"
+                app:layout_constraintBottom_toTopOf="@+id/text_view_breathing"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageViewbreath" />
+                app:layout_constraintTop_toBottomOf="@+id/image_view_breath" />
 
             <TextView
-                android:id="@+id/textViewbrathing"
+                android:id="@+id/text_view_breathing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -338,7 +338,7 @@
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_medium"
         android:text="Articles"
-        android:textColor="@color/txtDark"
+        android:textColor="@color/text_dark"
         android:textSize="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -358,12 +358,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="16dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView14">
 
             <ImageView
-                android:id="@+id/imageView6"
+                android:id="@+id/img_article1"
                 android:layout_width="match_parent"
                 android:layout_height="128dp"
                 android:scaleType="fitXY"
@@ -376,7 +376,7 @@
                 app:layout_constraintVertical_bias="0.0" />
 
             <ImageView
-                android:id="@+id/imageView7"
+                android:id="@+id/img_article2"
                 android:layout_width="match_parent"
                 android:layout_height="128dp"
                 android:layout_marginTop="16dp"
@@ -386,9 +386,10 @@
 
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+                app:layout_constraintTop_toBottomOf="@+id/img_article1" />
 
             <ImageView
+                android:id="@+id/img_article3"
                 android:layout_width="match_parent"
                 android:layout_height="128dp"
                 android:layout_marginTop="12dp"
@@ -397,7 +398,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+                app:layout_constraintTop_toBottomOf="@+id/img_article2" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
