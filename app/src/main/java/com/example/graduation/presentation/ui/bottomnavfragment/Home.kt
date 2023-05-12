@@ -34,11 +34,14 @@ private val viewModel: AuthViewModel by viewModels()
 
 override fun getRootView(): View = binding.root
 override fun initVar() {
+
 }
 
 override fun onEvent() {
     binding.run {
-
+        tvStartReading.setOnClickListener {
+            findNavController().navigate(HomeDirections.actionHome2ToReading())
+        }
 
     }
 }

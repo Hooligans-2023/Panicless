@@ -11,7 +11,8 @@ import com.example.graduation.util.DialogUtil
 import com.google.android.material.textfield.TextInputLayout
 
 abstract class BaseFragment : Fragment() {
-    private val TAG_BASE = "BaseFragment"
+    private
+    val TAG_BASE = "BaseFragment"
     private lateinit var dialog: DialogUtil
 
     private val baseActivity by lazy {
