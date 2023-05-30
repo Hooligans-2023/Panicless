@@ -1,6 +1,7 @@
 package com.example.graduation.data.di
 
 import com.example.graduation.data.apiservice.AuthService
+import com.example.graduation.data.apiservice.MainAppService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,6 +15,11 @@ class ApiModule {
     @Provides
     fun bindApiService(retrofit: Retrofit): AuthService {
         return retrofit.create(AuthService::class.java)
+    }
+
+    @Provides
+    fun bindMainAppService(retrofit: Retrofit): MainAppService {
+        return retrofit.create(MainAppService::class.java)
     }
 
 

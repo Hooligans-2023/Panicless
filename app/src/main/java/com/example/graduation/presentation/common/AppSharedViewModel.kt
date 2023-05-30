@@ -8,9 +8,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import com.example.graduation.data.models.common.AddressModel
-import com.example.graduation.data.models.common.OrderModel
-import com.example.graduation.data.models.response.subscriptions.SubscriptionModel
-import com.example.graduation.data.models.response.subscriptions.payment.PaymentModel
 
 class AppSharedViewModel : ViewModel() {
 
@@ -37,14 +34,7 @@ class AppSharedViewModel : ViewModel() {
     private var _address = MutableStateFlow<AddressModel?>(null)
     val address  = _address.asStateFlow()
 
-    private var _order = MutableStateFlow<OrderModel?>(null)
-    val order  = _order.asStateFlow()
 
-    private var _subscriptionModel = MutableStateFlow<SubscriptionModel?>(null)
-    val subscriptionModel  = _subscriptionModel.asStateFlow()
-
-    private var _paymentModel = MutableStateFlow<PaymentModel?>(null)
-    val paymentModel  = _paymentModel.asStateFlow()
 
 
 
@@ -85,17 +75,6 @@ class AppSharedViewModel : ViewModel() {
         _address.value = address
     }
 
-    fun setOrder(orderModel: OrderModel) {
-        _order.value = orderModel
-    }
-
-    fun setSubscription(subscriptionModel: SubscriptionModel) {
-        _subscriptionModel.value = subscriptionModel
-    }
-
-    fun setPaymentModel(paymentModel: PaymentModel) {
-        _paymentModel.value = paymentModel
-    }
 
     fun clearAppData() {
         _userName.value = null
@@ -105,8 +84,6 @@ class AppSharedViewModel : ViewModel() {
         _storeId.value = null
         _blogId.value = null
         _productId.value = null
-        _order.value = null
-        _subscriptionModel.value = null
 
     }
 
