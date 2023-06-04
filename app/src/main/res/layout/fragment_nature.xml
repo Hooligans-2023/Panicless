@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".Relief.nature.Nature">
+    tools:context=".presentation.ui.Relief.nature.Nature">
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/appbar"
         android:layout_width="match_parent"
@@ -17,7 +17,7 @@
         android:id="@+id/recycle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/list_item"
+        tools:listitem="@layout/list_item_relief"
         app:layout_constraintTop_toBottomOf="@+id/appbar"
         />
 </androidx.constraintlayout.widget.ConstraintLayout>

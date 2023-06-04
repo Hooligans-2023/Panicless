@@ -33,7 +33,7 @@ class Login : BaseFragment() {
 
     override fun onEvent() {
         binding.run {
-            next1.setOnClickListener {
+            loginBtn.setOnClickListener {
                 viewModel.onEvent(AuthEvent.Login(
                     LoginBody(
                         email = firstNum.text.toString(),

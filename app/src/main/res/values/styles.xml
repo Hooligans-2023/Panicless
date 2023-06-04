@@ -11,8 +11,5 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">12dp</item>
         <item name="color">@color/card_background</item>
-
-
-
     </style>
 </resources>

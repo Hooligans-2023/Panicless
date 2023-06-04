@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginTop="16dp"
+    android:elevation="@dimen/dimen_8dp"
+    android:background="@drawable/corner_card_history"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/materialTextView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_8dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="You had a panic attack"
+        android:textColor="@color/superDarkGray"
+        android:textSize="@dimen/dimen_16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginEnd="@dimen/dimen_8dp"
+        android:text="16 hours ago"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/dimen_14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/materialTextView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/materialTextView4" />
+
+    <TextView
+        android:id="@+id/heartBeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/dimen_16dp"
+        android:layout_marginStart="@dimen/dimen_8dp"
+        android:text="Heartbeat:"
+        android:textSize="@dimen/dimen_14dp"
+        android:fontFamily="@font/roboto"
+        android:textColor="@color/superDarkGray"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/materialTextView4" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/numHeartBeat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" 74 dpm  "
+        android:textSize="@dimen/dimen_14dp"
+        android:textColor="@color/darkGray"
+        android:fontFamily="@font/roboto"
+        app:layout_constraintBottom_toBottomOf="@+id/heartBeat"
+        app:layout_constraintStart_toEndOf="@+id/heartBeat"
+        app:layout_constraintTop_toTopOf="@+id/heartBeat"
+       />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/Breathing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="-  Breathing:"
+        android:textColor="@color/superDarkGray"
+        android:textSize="@dimen/dimen_14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/heartBeat"
+        app:layout_constraintStart_toEndOf="@+id/numHeartBeat"
+        app:layout_constraintTop_toTopOf="@+id/heartBeat" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/numBreathing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text=" 0.5  "
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/dimen_14dp"
+
+        app:layout_constraintBottom_toBottomOf="@+id/heartBeat"
+        app:layout_constraintStart_toEndOf="@+id/Breathing"
+        app:layout_constraintTop_toTopOf="@+id/heartBeat"
+       />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/Trembling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text="-  Trembling:"
+        android:textColor="@color/superDarkGray"
+        android:textSize="@dimen/dimen_14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/heartBeat"
+        app:layout_constraintStart_toEndOf="@+id/numBreathing"
+        app:layout_constraintTop_toTopOf="@+id/heartBeat" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/stateTrembling"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto"
+        android:text=" danger"
+        android:textColor="@color/darkGray"
+        android:textSize="@dimen/dimen_14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/heartBeat"
+        app:layout_constraintStart_toEndOf="@+id/Trembling"
+        app:layout_constraintTop_toTopOf="@+id/heartBeat"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

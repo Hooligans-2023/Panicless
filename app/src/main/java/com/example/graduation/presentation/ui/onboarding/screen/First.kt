@@ -33,7 +33,7 @@ class First : Fragment() {
 
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
-        binding.next1.setOnClickListener {
+        binding.loginBtn.setOnClickListener {
             viewPager?.currentItem = 1
 
         }

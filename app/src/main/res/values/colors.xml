@@ -17,6 +17,6 @@
     <color name="color_card">#f6f7fd</color>
     <color name="head_bar">#1C1B1F</color>
     <color name="card_background">#f6f7fd</color>
-
-
+    <color name="boarders">#C8C8C8</color>
+    <color name="hint">#C8C8C8</color>
 </resources>

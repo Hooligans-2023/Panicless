@@ -1,4 +1,4 @@
-package com.example.graduation.presentation.ui
+package com.example.graduation.presentation.ui.article
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.graduation.R
 
-class artical2 : Fragment() {
+class Article2 : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

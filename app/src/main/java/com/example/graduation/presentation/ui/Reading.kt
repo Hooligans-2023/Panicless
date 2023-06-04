@@ -32,7 +32,6 @@ class Reading : BaseFragment() {
     val HEART_RATE_SERVICE_UUID = "0000180d-0000-1000-8000-00805f9b34fb"
     val HEART_RATE_CHARACTERISTIC_UUID = "00002a37-0000-1000-8000-00805f9b34fb"
     private val PERMISSION_REQUEST_BODY_SENSORS = 1
-
     private val permissions = arrayOf(
         Manifest.permission.BLUETOOTH,
         Manifest.permission.BLUETOOTH_ADMIN
@@ -95,9 +94,13 @@ class Reading : BaseFragment() {
             if (status == BluetoothGatt.GATT_SUCCESS) {
                 val heartRateService = gatt?.getService(UUID.fromString(HEART_RATE_SERVICE_UUID))
                 val heartRateCharacteristic =
-                    heartRateService?.getCharacteristic(UUID.fromString(HEART_RATE_CHARACTERISTIC_UUID))
+                    heartRateService?.getCharacteristic(
+                        UUID.fromString(
+                            HEART_RATE_CHARACTERISTIC_UUID
+                        )
+                    )
                 if (heartRateCharacteristic != null) {
-                    gatt.setCharacteristicNotification(heartRateCharacteristic, true)
+                   // gatt.setCharacteristicNotification(heartRateCharacteristic, true)
                 }
             }
         }
@@ -117,7 +120,7 @@ class Reading : BaseFragment() {
     private fun connectToHeartRateSensor() {
         val bluetoothAdapter = BluetoothAdapter.getDefaultAdapter()
         val bluetoothDevice = bluetoothAdapter.getRemoteDevice("heart_rate_sensor_mac_address")
-        val bluetoothGatt = bluetoothDevice.connectGatt(requireContext(), false, bluetoothGattCallback)
+        /* val bluetoothGatt = bluetoothDevice.connectGatt(requireContext(), false, bluetoothGattCallback)
 
         Log.d(TAG, "connectToHeartRateSensor: ${bluetoothGatt.device.name}")
     }
@@ -133,7 +136,8 @@ class Reading : BaseFragment() {
         } else {
 
         }
+    }*/
+
+
     }
-
-
 }

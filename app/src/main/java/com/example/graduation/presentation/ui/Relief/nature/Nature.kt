@@ -1,4 +1,4 @@
-package com.example.graduation.Relief.nature
+package com.example.graduation.presentation.ui.Relief.nature
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

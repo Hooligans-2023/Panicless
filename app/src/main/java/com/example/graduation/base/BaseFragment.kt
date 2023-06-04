@@ -14,7 +14,6 @@ abstract class BaseFragment : Fragment() {
     private
     val TAG_BASE = "BaseFragment"
     private lateinit var dialog: DialogUtil
-
     private val baseActivity by lazy {
         activity as BaseActivity
     }
@@ -34,7 +33,6 @@ abstract class BaseFragment : Fragment() {
     }
 
     abstract fun getRootView(): View
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dialog = DialogUtil(baseActivity)
@@ -52,15 +50,10 @@ abstract class BaseFragment : Fragment() {
     }
 
     abstract fun initVar()
-
     abstract fun onEvent()
-
     abstract fun render()
-
     abstract fun navigate()
-
     abstract fun showEffect()
-
     fun showToast(text: String, timing: Int = Toast.LENGTH_SHORT) {
         Toast.makeText(baseActivity, text, timing).show()
     }
@@ -70,11 +63,11 @@ abstract class BaseFragment : Fragment() {
         selectedText.isErrorEnabled = false
     }
 
-    fun showLoadingDialog(){
+    fun showLoadingDialog() {
         dialog.showDialog()
     }
-    fun hideLoadingDialog(){
+
+    fun hideLoadingDialog() {
         dialog.hideDialog()
     }
-
 }

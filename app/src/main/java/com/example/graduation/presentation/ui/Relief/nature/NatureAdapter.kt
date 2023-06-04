@@ -1,19 +1,17 @@
-package com.example.graduation.Relief.nature
+package com.example.graduation.presentation.ui.Relief.nature
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduation.R
-import com.example.graduation.databinding.FragmentSignUpBinding
 import com.google.android.material.imageview.ShapeableImageView
 
 class NatureAdapter(private val myDataSet: List<MyData>):RecyclerView.Adapter<NatureAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.list_item, parent, false)
+            .inflate(R.layout.list_item_relief, parent, false)
         return ViewHolder(view)
     }
 

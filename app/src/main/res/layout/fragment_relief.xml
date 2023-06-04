@@ -44,7 +44,7 @@
         app:cardBackgroundColor="@color/card_background"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
-        app:layout_constraintEnd_toStartOf="@+id/card_view2"
+        app:layout_constraintEnd_toStartOf="@+id/deep_breathing"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title">
@@ -76,7 +76,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view2"
+        android:id="@+id/deep_breathing"
         android:layout_width="0dp"
         android:layout_height="190dp"
         android:layout_marginStart="16dp"
