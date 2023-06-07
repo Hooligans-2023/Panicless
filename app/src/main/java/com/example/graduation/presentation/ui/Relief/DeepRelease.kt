@@ -20,8 +20,10 @@ class DeepRelease : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding.cardPlayer.setOnClickListener {
-            findNavController().navigate(R.id.action_relief_to_deepRelease)
+
+        binding.btnPause.setOnClickListener{
+            findNavController().navigate(DeepReleaseDirections.actionDeepReleaseToMediaFragment())
+
         }
         return binding.root
     }

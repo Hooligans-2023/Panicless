@@ -20,11 +20,16 @@ class Relief : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding.deep.setOnClickListener {
             findNavController().navigate(ReliefDirections.actionReliefToDeepRelease())
         }
         binding.natureCard.setOnClickListener {
             findNavController().navigate(ReliefDirections.actionReliefToNature())
+        }
+        binding.person.setOnClickListener {
+            findNavController().navigate(ReliefDirections.actionReliefToProfile4())
+
         }
         return binding.root
     }
