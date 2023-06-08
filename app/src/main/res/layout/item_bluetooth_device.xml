@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/dimen_8dp"
+    android:layout_marginBottom="16dp"
+    app:contentPadding="@dimen/dimen_8dp"
+    app:cardElevation="@dimen/dimen_2dp"
+    app:cardCornerRadius="@dimen/dimen_4dp"
+    >
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_device_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_8dp"
+        android:fontFamily="@font/roboto_bold"
+        tools:text="You had a panic attack"
+        android:textColor="@color/superDarkGray"
+        android:textSize="@dimen/text_size_16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+</com.google.android.material.card.MaterialCardView>

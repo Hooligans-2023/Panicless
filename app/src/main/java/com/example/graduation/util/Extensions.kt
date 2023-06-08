@@ -7,6 +7,8 @@ import android.graphics.Bitmap
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable
 import android.location.Location
+import android.os.Build
+import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import androidx.annotation.ColorRes
@@ -17,6 +19,7 @@ import coil.load
 import coil.transform.RoundedCornersTransformation
 import com.google.gson.Gson
 import com.example.graduation.data.models.ErrorResponse
+import java.io.Serializable
 
 fun Context.getStringByName(name: String): String {
     return getString(resources.getIdentifier(name, "string", packageName))
@@ -107,3 +110,7 @@ fun distanceInMeter(startLat: Double, startLon: Double, endLat: Double, endLon: 
     return results[0]
 }
 
+inline fun <reified T : Serializable> Bundle.serializable(key: String): T? = when {
+    Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU -> getSerializable(key, T::class.java)
+    else -> @Suppress("DEPRECATION") getSerializable(key) as? T
+}
