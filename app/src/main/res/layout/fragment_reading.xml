@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.ui.Reading">
+    tools:context=".presentation.ui.reading.Reading">
 
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/appbar"
@@ -69,7 +69,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="4dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="78"
+                android:text="0"
                 android:textColor="@color/text_dark"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/text_view_name_heart"
@@ -123,7 +123,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="4dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="96.6"
+                android:text="0"
                 android:textColor="#121935"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/text_view_breathing"
@@ -176,7 +176,7 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginBottom="4dp"
                 android:fontFamily="@font/roboto_bold"
-                android:text="79"
+                android:text="0"
                 android:textColor="#121935"
                 android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/textViewtrmbing"
@@ -223,7 +223,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="You are having a panic attack!"
+        tools:text="You are having a panic attack!"
         android:textColor="@color/txtRed"
         android:textSize="16sp"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
@@ -235,7 +235,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
         android:fontFamily="@font/roboto"
-        android:text="Lorem ipsum dolor sit amet consectetur. Urna lacus cursus orci ultrices. Sollicitudin dolor id elit ut tincidunt egestas suscipit orci id. Dui commodo nibh cras nec non libero. Imperdiet est faucibus nunc metus metus tristique tellus leo curabitur. Accumsan nisi nulla arcu lorem quis dolor est aenean nisl. Feugiat neque elit non augue. Adipiscing fermentum enim ut imperdiet. Vitae facilisis porta felis odio. Commodo at nisi phasellus vulputate sollicitudin eget blandit fames."
+        tools:text="Lorem ipsum dolor sit amet consectetur. Urna lacus cursus orci ultrices. Sollicitudin dolor id elit ut tincidunt egestas suscipit orci id. Dui commodo nibh cras nec non libero. Imperdiet est faucibus nunc metus metus tristique tellus leo curabitur. Accumsan nisi nulla arcu lorem quis dolor est aenean nisl. Feugiat neque elit non augue. Adipiscing fermentum enim ut imperdiet. Vitae facilisis porta felis odio. Commodo at nisi phasellus vulputate sollicitudin eget blandit fames."
         android:textColor="@color/superDarkGray"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
