@@ -8,6 +8,7 @@ import android.bluetooth.BluetoothSocket
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Build
+import android.os.CountDownTimer
 import android.os.Handler
 import android.os.Message
 import android.util.Log
@@ -18,6 +19,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.setFragmentResultListener
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.graduation.base.BaseFragment
 import com.example.graduation.databinding.FragmentReadingBinding
 import com.example.graduation.util.serializable
@@ -30,6 +32,7 @@ import java.io.InputStream
 import java.io.OutputStream
 import java.lang.ref.WeakReference
 import java.util.UUID
+import java.util.concurrent.TimeUnit
 
 private val TAG = "ReadingScreen"
 
@@ -38,8 +41,6 @@ class Reading : BaseFragment() {
     private val binding by lazy {
         FragmentReadingBinding.inflate(layoutInflater)
     }
-    val HEART_RATE_SERVICE_UUID = "0000180d-0000-1000-8000-00805f9b34fb"
-    val HEART_RATE_CHARACTERISTIC_UUID = "00002a37-0000-1000-8000-00805f9b34fb"
     private val PERMISSION_REQUEST_BODY_SENSORS = 1
     private val permissions = arrayOf(
         Manifest.permission.BLUETOOTH,
@@ -47,6 +48,7 @@ class Reading : BaseFragment() {
     )
 
     private var devicesBoundDialogFragment: DevicesBoundDialogFragment? = null
+    private var panicAttackDialogFragment: PanicAttackDialogFragment? = null
 
     private lateinit var bluetoothAdapter: BluetoothAdapter
     private lateinit var devices: MutableList<BluetoothDevice>
@@ -102,6 +104,8 @@ class Reading : BaseFragment() {
             setupBluetooth()
         }
         handler = MyHandler(this)
+        panicAttackDialogFragment =
+            PanicAttackDialogFragment()
 
     }
 
@@ -125,6 +129,13 @@ class Reading : BaseFragment() {
     @SuppressLint("MissingPermission")
     override fun onEvent() {
 
+        panicAttackDialogFragment?.setOnConfirmListener {
+            findNavController().navigate(ReadingDirections.actionReadingToRelief())
+        }
+
+        panicAttackDialogFragment?.setOnCancelListener {
+            panicAttackDialogFragment?.dismiss()
+        }
 
     }
 
@@ -240,14 +251,19 @@ class Reading : BaseFragment() {
 
     private fun startSendData() {
         sendResetCommand()
-        connectedThread.write("1".toByteArray())
-        sendResetCommand()
+        connectedThread.write("0".toByteArray())
+        var type = "heart"
+        object : CountDownTimer(20000, 1000) {
+            override fun onTick(p0: Long) {
+                Log.d(TAG, "onTick: Read $type")
+            }
 
-//        repeat (5){
-//        connectedThread.write("0".toByteArray())
-//        sendResetCommand()
-//        connectedThread.write("1".toByteArray())
-//            }
+            override fun onFinish() {
+                sendResetCommand()
+                connectedThread.write("1".toByteArray())
+                type = "breath"
+            }
+        }.start()
     }
 
     private fun requestBluetoothScanPermission() {
@@ -367,8 +383,27 @@ class Reading : BaseFragment() {
                     val readBuffer = msg.obj as ByteArray
                     val readMessage = String(readBuffer, 0, msg.arg1)
                     val result = readMessage.split(" ")
-                    if (result.size > 2)
-                        fragment.binding.textNumHeart.text = "${result[0]}"
+                    if (result.size > 2) {
+                        val heartValue = result[0].replace(",", "")
+                        if(heartValue.isNotEmpty() && heartValue.isNotBlank())
+                        fragment.binding.textNumHeart.text = "$heartValue"
+                        try {
+                            if(heartValue.toInt()>140){
+                                fragment.binding.textViewBreathing.text = "heavy breath"
+                            }else{
+                                fragment.binding.textViewBreathing.text = "normal"
+                            }
+                        }catch (e:Exception){
+
+                        }
+                    }else {
+                        if (readMessage.lowercase().contains("danger"))
+                            fragment.binding.textViewtrmbing.text = readMessage
+                        else
+                            fragment.binding.textViewtrmbing.text = "stable"
+                        if(!readMessage.lowercase().contains("heart"))
+                          fragment.binding.textViewBreathing.text = readMessage
+                    }
                     Log.d(TAG, "handleMessage: $readMessage")
                 }
             }
@@ -376,7 +411,7 @@ class Reading : BaseFragment() {
     }
 
     private fun sendResetCommand() {
-        val resetCommand = "RESET" // Replace "RESET" with the appropriate reset command
+        val resetCommand = "2" // Replace "RESET" with the appropriate reset command
 
         if (::connectedThread.isInitialized) {
             connectedThread.write(resetCommand.toByteArray())

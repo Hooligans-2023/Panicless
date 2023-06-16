@@ -1,10 +1,7 @@
 package com.example.graduation.presentation.ui.bottomnavfragment
 
-import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -12,7 +9,6 @@ import com.example.graduation.base.BaseFragment
 import com.example.graduation.databinding.FragmentHomeBinding
 import com.example.graduation.presentation.common.UiEffect
 import com.example.graduation.presentation.ui.auth.AuthViewModel
-import com.example.graduation.presentation.ui.auth.LoginDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -24,11 +20,11 @@ class Home : BaseFragment() {
     }
 
 
-    private val viewModel: AuthViewModel by viewModels()
+    private val viewModel: HomeViewModel by viewModels()
 
     override fun getRootView(): View = binding.root
     override fun initVar() {
-
+       // viewModel.onEvent(HomeEvent.GetLastReading)
     }
 
     override fun onEvent() {
@@ -48,23 +44,14 @@ class Home : BaseFragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        return super.onCreateView(inflater, container, savedInstanceState)
-    }
 
     override fun render() {
         lifecycleScope.launchWhenStarted {
             viewModel.uiState.collect { state ->
                 if (state.isSuccess) {
                     hideLoadingDialog()
-//                    sharedViewModel.setRegisterData(state)
-//                    sharedViewModel.setCode(state.result?.code)
-                    findNavController().navigate(LoginDirections.actionLoginToHome())
-                    viewModel.clearSuccessState()
+                    Log.d(TAG, "render: ${state.lastReading}")
+
                 }
                 if (state.isLoading) {
                     showLoadingDialog()

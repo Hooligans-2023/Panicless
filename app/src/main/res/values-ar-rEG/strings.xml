@@ -13,4 +13,6 @@
     <string name="do_you_feel_ok">هل تشعر بالموافقة؟</string>
     <string name="start_taking_readings">ابدأ بأخذ القراءات</string>
     <string name="articles">مقالات</string>
+    <string name="you_have_panic_attack">لديك نوبة هلع</string>
+    <string name="cancel">اغلاق</string>
 </resources>
