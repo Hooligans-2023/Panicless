@@ -116,11 +116,19 @@
             android:layout_marginBottom="30dp"
             android:src="@drawable/photo"
             app:layout_constraintBottom_toTopOf="@+id/cardView"
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/person"
+            android:layout_width="@dimen/dimen_55dp"
+            android:layout_height="@dimen/dimen_55dp"
+            android:layout_marginTop="@dimen/dimen_32dp"
+            android:layout_marginEnd="@dimen/dimen_16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.625"
-            app:layout_constraintStart_toEndOf="@+id/Health_Status"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.864" />
+            android:src="@drawable/trace"
+            app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Small"
+            />
+
 
         <LinearLayout
             android:id="@+id/liner_card"

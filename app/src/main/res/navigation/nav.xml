@@ -16,6 +16,7 @@
             app:popUpTo="@id/viewPager2"
             app:popUpToInclusive="true" />
     </fragment>
+
     <fragment
         android:id="@+id/splash"
         android:name="com.example.graduation.presentation.ui.onboarding.Splash"
@@ -51,6 +52,7 @@
             app:popUpTo="@id/login"
             app:popUpToInclusive="true" />
     </fragment>
+
     <fragment
         android:id="@+id/signUp2"
         android:name="com.example.graduation.presentation.ui.auth.SignUp"
@@ -105,7 +107,11 @@
         <action
             android:id="@+id/action_home_to_artical2"
             app:destination="@id/artical2" />
+        <action
+            android:id="@+id/action_home_to_profile4"
+            app:destination="@id/profile4" />
     </fragment>
+
     <fragment
         android:id="@+id/relief"
         android:name="com.example.graduation.presentation.ui.bottomnavfragment.Relief"
@@ -117,6 +123,15 @@
         <action
             android:id="@+id/action_relief_to_nature"
             app:destination="@id/nature" />
+        <action
+            android:id="@+id/action_relief_to_profile"
+            app:destination="@id/nature" />
+        <action
+            android:id="@+id/action_relief_to_profile4"
+            app:destination="@id/profile4"
+            app:popUpTo="@id/relief"
+            app:popUpToInclusive="true" />
+
     </fragment>
     <fragment
         android:id="@+id/prediction"
@@ -127,7 +142,11 @@
         android:id="@+id/history"
         android:name="com.example.graduation.presentation.ui.history.History"
         android:label="fragment_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_history_to_profile4"
+            app:destination="@id/profile4" />
+    </fragment>
     <fragment
         android:id="@+id/artical3"
         android:name="com.example.graduation.Artical.Article3"
@@ -152,10 +171,31 @@
         <action
             android:id="@+id/action_deepRelease_to_relief"
             app:destination="@id/relief" />
+        <action
+            android:id="@+id/action_deepRelease_to_mediaFragment"
+            app:destination="@id/mediaFragment" />
     </fragment>
     <fragment
         android:id="@+id/nature"
         android:name="com.example.graduation.presentation.ui.Relief.nature.Nature"
         android:label="fragment_nature"
         tools:layout="@layout/fragment_nature" />
+    <fragment
+        android:id="@+id/profile4"
+        android:name="com.example.graduation.presentation.ui.Profile"
+        android:label="Profile" >
+        <action
+            android:id="@+id/action_profile4_to_editPersonFragment"
+            app:destination="@id/editPersonFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editPersonFragment"
+        android:name="com.example.graduation.EditPersonFragment"
+        android:label="EditPersonFragment" />
+    <fragment
+        android:id="@+id/mediaFragment"
+        android:name="com.example.graduation.MediaFragment"
+        android:label="fragment_media"
+        tools:layout="@layout/fragment_media" />
+
 </navigation>

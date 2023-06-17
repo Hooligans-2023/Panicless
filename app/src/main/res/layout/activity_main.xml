@@ -26,7 +26,6 @@
         app:menu="@menu/nav_menu"
         app:itemIconTint="@color/coloritem"
         app:itemTextColor="@color/coloritem"
-
         android:visibility="visible"
         tools:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"

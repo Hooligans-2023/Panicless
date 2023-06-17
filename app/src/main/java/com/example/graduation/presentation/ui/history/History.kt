@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.graduation.R
@@ -12,6 +13,7 @@ import com.example.graduation.databinding.FragmentHistoryBinding
 import com.example.graduation.databinding.FragmentNatureBinding
 import com.example.graduation.presentation.ui.Relief.nature.MyData
 import com.example.graduation.presentation.ui.Relief.nature.NatureAdapter
+import com.example.graduation.presentation.ui.bottomnavfragment.ReliefDirections
 
 class History : Fragment() {
 
@@ -45,6 +47,9 @@ class History : Fragment() {
         val myAdapter = HistoryAdapter(myHistoryData)
         recyclerView.adapter = myAdapter
 
+        binding.person.setOnClickListener {
+            findNavController().navigate(HistoryDirections.actionHistoryToProfile4())
+        }
 
         return binding.root
     }
