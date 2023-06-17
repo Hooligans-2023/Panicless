@@ -8,8 +8,8 @@ android:background="@drawable/my_gradient_shape"
 tools:context=".presentation.ui.onboarding.Splash">
 
 <ImageView
-    android:layout_width="192dp"
-    android:layout_height="217.8dp"
+    android:layout_width="@dimen/dimen_192dp"
+    android:layout_height="@dimen/dimen_217dp"
     android:src="@drawable/splash"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
