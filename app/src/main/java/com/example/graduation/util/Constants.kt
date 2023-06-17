@@ -16,6 +16,8 @@ object Constants {
 
    // ================== GET Request Map Key ================
    const val LATITUDE: String = "latitude"
+   const val USER: String = "USER"
+   const val BOT: String = "Bot"
    const val LONGITUDE: String = "longitude"
    const val STORE_RATINGS: String = "ratings"
    const val PRODUCT_CATEGORIES: String = "product_categories"

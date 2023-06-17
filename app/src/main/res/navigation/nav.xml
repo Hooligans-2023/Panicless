@@ -137,7 +137,11 @@
         android:id="@+id/prediction"
         android:name="com.example.graduation.presentation.ui.bottomnavfragment.Prediction"
         android:label="fragment_prediction"
-        tools:layout="@layout/fragment_prediction" />
+        tools:layout="@layout/fragment_prediction" >
+        <action
+            android:id="@+id/action_prediction_to_chatBot"
+            app:destination="@id/chatBot" />
+    </fragment>
     <fragment
         android:id="@+id/history"
         android:name="com.example.graduation.presentation.ui.history.History"
@@ -197,5 +201,10 @@
         android:name="com.example.graduation.MediaFragment"
         android:label="fragment_media"
         tools:layout="@layout/fragment_media" />
+    <fragment
+        android:id="@+id/chatBot"
+        android:name="com.example.graduation.presentation.ui.chat.ChatBot"
+        android:label="fragment_chat_bot"
+        tools:layout="@layout/fragment_chat_bot" />
 
 </navigation>
