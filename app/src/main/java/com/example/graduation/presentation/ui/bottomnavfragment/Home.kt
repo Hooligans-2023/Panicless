@@ -83,6 +83,8 @@ class Home : BaseFragment() {
                         Log.d(TAG, "showEffect: ${effect.message}")
                         showToast(effect.message)
                     }
+
+                    else -> {}
                 }
 
             }
