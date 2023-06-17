@@ -22,6 +22,8 @@ class ChatBot : BaseFragment() {
     private val questionList = mutableListOf<MessageModel>()
     private val chatList = mutableListOf<MessageModel>()
     private var questionIndex = 0
+    private var yesCount = 0
+    private var noCount = 0
     private var adapter = ChatAdapter()
 
     override fun initVar() {
@@ -38,8 +40,8 @@ class ChatBot : BaseFragment() {
     override fun onEvent() {
         binding.run {
             btnSend.setOnClickListener {
-                if(etMessage.text.toString().isNotEmpty()) {
-                    if(etMessage.text.toString().lowercase().contains("nahed")){
+                if (etMessage.text.toString().isNotEmpty()) {
+                    if (etMessage.text.toString().lowercase().contains("nahed")) {
                         chatList.add(
                             MessageModel(
                                 id = 51 + questionIndex,
@@ -66,7 +68,7 @@ class ChatBot : BaseFragment() {
                                 recycleChat.adapter?.itemCount?.minus(1) ?: 0
                             )
                         }
-                    }else {
+                    } else {
                         chatList.add(
                             MessageModel(
                                 id = 51 + questionIndex,
@@ -75,20 +77,36 @@ class ChatBot : BaseFragment() {
                                 messageText = etMessage.text.toString()
                             )
                         )
+                        if (etMessage.text.toString().lowercase() == "yes") {
+                            yesCount++
+                        } else
+                            noCount++
+
                         questionIndex++
                         if (questionIndex < questionList.size)
                             chatList.add(questionList[questionIndex])
-                        val newChat = mutableListOf<MessageModel>()
-                        newChat.addAll(chatList)
-                        adapter = ChatAdapter()
-                        adapter.differ.submitList(newChat)
-                        etMessage.setText("")
-                        recycleChat.post {
-                            recycleChat.scrollToPosition(
-                                recycleChat.adapter?.itemCount?.minus(1) ?: 0
+                        else if (questionIndex == questionList.size)
+                            chatList.add(
+                                MessageModel(
+                                    id = 51 + questionIndex,
+                                    byMe = true,
+                                    sender = BOT,
+                                    messageText = if (yesCount >= noCount) "You Should Consider Going To The Doctor" else "We Believe That There is No serious Concern For You To See The Doctor"
+                                )
                             )
-                        }
-                        Log.d(TAG, "onEvent: $chatList")
+                            val newChat = mutableListOf<MessageModel>()
+                            newChat.addAll(chatList)
+                            adapter = ChatAdapter()
+                            adapter.differ.submitList(newChat)
+                            etMessage.setText("")
+                            recycleChat.post {
+                                recycleChat.scrollToPosition(
+                                    recycleChat.adapter?.itemCount?.minus(1) ?: 0
+                                )
+                            }
+                            Log.d(TAG, "onEvent: $chatList")
+
+
                     }
                 }
             }
