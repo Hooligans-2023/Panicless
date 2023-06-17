@@ -9,6 +9,8 @@ import com.example.graduation.base.BaseFragment
 import com.example.graduation.databinding.FragmentHomeBinding
 import com.example.graduation.presentation.common.UiEffect
 import com.example.graduation.presentation.ui.auth.AuthViewModel
+import com.example.graduation.presentation.ui.auth.LoginDirections
+import com.example.graduation.presentation.ui.history.HistoryDirections
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -40,6 +42,9 @@ class Home : BaseFragment() {
             }
             imgArticle3.setOnClickListener {
                 findNavController().navigate(HomeDirections.actionHomeToArtical3())
+            }
+            person.setOnClickListener {
+                findNavController().navigate(HomeDirections.actionHomeToProfile4())
             }
         }
     }

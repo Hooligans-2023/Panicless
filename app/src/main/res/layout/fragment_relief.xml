@@ -7,9 +7,22 @@
     tools:context=".presentation.ui.bottomnavfragment.Relief">
 
 
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/person"
+        android:layout_width="@dimen/dimen_55dp"
+        android:layout_height="@dimen/dimen_55dp"
+        android:layout_marginTop="@dimen/dimen_32dp"
+        android:layout_marginEnd="@dimen/dimen_16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/trace"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Small"
+       />
+
+
     <TextView
         android:id="@+id/tv_relief"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
@@ -20,10 +33,9 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <TextView
         android:id="@+id/tv_title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="4dp"

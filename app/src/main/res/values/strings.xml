@@ -83,5 +83,7 @@ By taking steps to manage stress, practice relaxation techniques, and seek help 
     <string name="forgot_password">Forgot password?</string>
     <string name="you_have_panic_attack">You have panic attack</string>
     <string name="cancel">Cancel</string>
+    <string name="trust_number">Trust Number</string>
+    <string name="save">Save</string>
 
 </resources>
