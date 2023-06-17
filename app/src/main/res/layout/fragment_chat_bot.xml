@@ -54,7 +54,6 @@
             android:layout_margin="10dp"
             android:layout_weight=".5"
             android:background="@drawable/corner"
-
             android:hint="Type here"
             android:inputType="textShortMessage"
             android:padding="10dp"
@@ -70,6 +69,7 @@
             android:layout_marginEnd="16dp"
             android:backgroundTint="@color/primary"
             android:src="@drawable/send"
+
             app:layout_constraintBottom_toBottomOf="@+id/et_message"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/et_message" />

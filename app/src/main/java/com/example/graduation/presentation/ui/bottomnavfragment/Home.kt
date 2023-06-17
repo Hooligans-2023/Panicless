@@ -43,7 +43,7 @@ class Home : BaseFragment() {
             imgArticle3.setOnClickListener {
                 findNavController().navigate(HomeDirections.actionHomeToArtical3())
             }
-            person.setOnClickListener {
+            imageView.setOnClickListener {
                 findNavController().navigate(HomeDirections.actionHomeToProfile4())
             }
         }
