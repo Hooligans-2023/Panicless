@@ -43,7 +43,7 @@ class Reading : Fragment() {
     private val binding by lazy {
         FragmentReadingBinding.inflate(layoutInflater)
     }
-
+    private var panicAttackDialogFragment: PanicAttackDialogFragment? = null
 
 
     override fun onCreateView(
@@ -52,11 +52,18 @@ class Reading : Fragment() {
     ): View {
         startTimer()
 
+        panicAttackDialogFragment =
+            PanicAttackDialogFragment()
 
+        panicAttackDialogFragment?.setOnConfirmListener {
+            findNavController().navigate(ReadingDirections.actionReadingToRelief())
+        }
+
+        panicAttackDialogFragment?.setOnCancelListener {
+            panicAttackDialogFragment?.dismiss()
+        }
         return binding.root
     }
-
-
 
 
     private fun startTimer() {
@@ -76,6 +83,10 @@ class Reading : Fragment() {
                 binding.textNumHeart.setText("100")
                 binding.textViewBreathing.setText("Heavy Breathing")
                 binding.textViewtrmbing.setText("danger")
+                panicAttackDialogFragment?.show(
+                    childFragmentManager,
+                    "panicAttackDialogFragment"
+                )
             }
         }
 
